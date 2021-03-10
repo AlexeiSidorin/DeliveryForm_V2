@@ -1,5 +1,4 @@
 
-
 import com.github.javafaker.Faker;
 import lombok.Data;
 import lombok.Value;
