@@ -13,15 +13,15 @@ import java.util.Random;
 @Value
 public class TestData {
 
-    Faker faker = new Faker(new Locale("ru"));
 
-
-    public String enterName(Faker faker){
+    public String enterName(){
+        Faker faker = new Faker(new Locale("ru"));
         String name = faker.name().fullName();
         return name;
     }
 
-    public String enterPhone(Faker faker)  {
+    public String enterPhone()  {
+        Faker faker = new Faker(new Locale("ru"));
         String phone = faker.numerify("+7##########");
         return phone;
     }
@@ -33,19 +33,13 @@ public class TestData {
     }
 
 
-    public static String getDatePlusThree(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String date = LocalDate.now().plusDays(3).format(formatter);
+    public String setDate(long plusDay) {
+        String date = LocalDate
+                .now()
+                .plusDays(plusDay)
+                .format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         return date;
     }
-
-    public static String getDatePlusFive(){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
-        String date = LocalDate.now().plusDays(5).format(formatter);
-        return date;
-    }
-
-
 
 
 }
