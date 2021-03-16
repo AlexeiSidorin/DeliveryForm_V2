@@ -14,26 +14,30 @@ import java.util.Random;
 public class TestData {
 
 
-    public String enterName(){
+    private TestData() {
+    }
+
+
+    public static String enterName(){
         Faker faker = new Faker(new Locale("ru"));
         String name = faker.name().fullName();
         return name;
     }
 
-    public String enterPhone()  {
+    public static String enterPhone()  {
         Faker faker = new Faker(new Locale("ru"));
         String phone = faker.numerify("+7##########");
         return phone;
     }
 
-    public String getCity(){
+    public static String getCity(){
         String[] city = { "Майкоп", "Уфа", "Нальчик", "Якутск", "Казань", "Кызыл", "Магас"};
         int rnd = new Random().nextInt(city.length);
         return city[rnd];
     }
 
 
-    public String setDate(long plusDay) {
+    public static String setDate(long plusDay) {
         String date = LocalDate
                 .now()
                 .plusDays(plusDay)
