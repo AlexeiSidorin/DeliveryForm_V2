@@ -20,7 +20,7 @@ public class TestData {
 
     public static String enterName(){
         Faker faker = new Faker(new Locale("ru"));
-        String name = faker.name().fullName();
+        String name = faker.name().firstName();
         return name;
     }
 
